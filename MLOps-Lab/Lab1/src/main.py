@@ -1,7 +1,7 @@
 # Import necessary libraries
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 import joblib
 
 if __name__ == '__main__':
@@ -14,8 +14,8 @@ if __name__ == '__main__':
         X, y, test_size=0.2, random_state=42, stratify=y
     )
 
-    # Train a Random Forest classifier
-    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    # Train a Logistic Regression classifier
+    model = LogisticRegression(max_iter=2000, solver="liblinear", random_state=42)
     model.fit(X_train, y_train)
 
     # Save the model to a file
