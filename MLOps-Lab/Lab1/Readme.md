@@ -5,17 +5,17 @@ This repository contains a simple exercise for practicing fundamental Docker ima
 ## 1) Create the image
 
 ```bash
-docker build -t lab1:v1 .
+docker build -t mlopslab1:v1 .
 ```
 
 ## 2) Export the image to a tar archive
 
 ```bash
-docker save lab1:v1 > my_image.tar
+docker save mlopslab1:v1 > localimage.tar
 ```
 
 ## 3) Execute the image
 
 ```bash
-docker run lab1:v1
+docker run mlopslab1:v1
 ```
