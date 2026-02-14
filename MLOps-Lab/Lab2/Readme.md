@@ -6,17 +6,10 @@ This project trains a Logistic Regression model and exposes it through a FastAPI
 
 ## Setup & Run
 
-### Clone the repository
-
-```bash
-git clone <your-repo-url>
-cd <project-directory>
-```
-
 ### Create virtual environment
 
 ```bash
-python -m venv environment
+python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
 ```
 
@@ -44,7 +37,9 @@ This saves the trained model inside the `model/` directory.
 ```bash
 uvicorn src.main:app --reload
 ```
-Ensure you are in the directory above the src directory.
+
+Ensure you are in the directory above the `src` directory.
+
 The API will start locally at:
 
 ```
@@ -65,5 +60,28 @@ http://127.0.0.1:8000/docs
 3. The Swagger UI interface will open.
 4. Click on the `/predict` endpoint.
 5. Click **"Try it out"**.
-6. Enter the sample JSON request body.
+6. Replace the request body with the following JSON.
 7. Click **"Execute"** to see the prediction response.
+
+---
+
+## Sample JSON Request Body
+
+```json
+{
+  "alcohol": 12.84,
+  "malic_acid": 2.96,
+  "ash": 2.61,
+  "alcalinity_of_ash": 24.0,
+  "magnesium": 101.0,
+  "total_phenols": 2.32,
+  "flavanoids": 0.60,
+  "nonflavanoid_phenols": 0.53,
+  "proanthocyanins": 0.81,
+  "color_intensity": 4.92,
+  "hue": 0.89,
+  "od280_od315_of_diluted_wines": 2.15,
+  "proline": 590.0
+}
+```
+---
