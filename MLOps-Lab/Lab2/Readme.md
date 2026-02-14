@@ -9,14 +9,14 @@ This project trains a Logistic Regression model and exposes it through a FastAPI
 ### Create virtual environment
 
 ```bash
-python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
+python -m venv environment
+source environment/bin/activate   # On Windows: environment\Scripts\activate
 ```
 
 ### Install dependencies
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ---
