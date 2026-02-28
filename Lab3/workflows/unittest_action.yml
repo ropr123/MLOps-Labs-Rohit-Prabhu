@@ -1,0 +1,47 @@
+name: Python Unittests
+
+on:
+  push:
+    branches: ["main", "master"]
+    paths:
+      - "MLOps-Lab/Lab3/**"
+      - ".github/workflows/**"
+  pull_request:
+    branches: ["main", "master"]
+    paths:
+      - "MLOps-Lab/Lab3/**"
+      - ".github/workflows/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          if [ -d "Lab3" ]; then cd Lab3; fi
+          if [ -d "MLOps-Lab/Lab3" ]; then cd MLOps-Lab/Lab3; fi
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run unittests
+        run: |
+          if [ -d "Lab3" ]; then cd Lab3; fi
+          if [ -d "MLOps-Lab/Lab3" ]; then cd MLOps-Lab/Lab3; fi
+          python -m unittest test.test_unittest
+
+      - name: Notify on success
+        if: success()
+        run: echo "Unit tests passed successfully"
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "Unit tests failed"
