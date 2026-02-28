@@ -1,0 +1,7 @@
+.vscode/
+**/environment/
+src/breast_cancer_model.pkl
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
