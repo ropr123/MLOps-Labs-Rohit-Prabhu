@@ -1,0 +1,6 @@
+[core]
+    no_scm = True
+    remote = mystore
+['remote "mystore"']
+    url = gs://mlops-lab-dvc/
+    credentialpath = ../gcp-key.json

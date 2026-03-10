@@ -1,0 +1,5 @@
+outs:
+- md5: bd770871c16417c955c6c002e617327f
+  size: 157
+  hash: md5
+  path: rohitFile.txt

@@ -5,3 +5,4 @@ src/breast_cancer_model.pkl
 *.py[cod]
 .pytest_cache/
 .DS_Store
+gcp-key.json
