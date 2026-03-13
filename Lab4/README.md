@@ -50,7 +50,6 @@ dvc push
 The following DVC-related files are tracked in the repository to maintain version history and configuration:
 - `.dvc/`
 - `.gitignore`
-- `.dvcignore`
 - `data/rohitFile.txt.dvc` (The metadata pointer to the actual data)
 
 ## How to Pull Data
